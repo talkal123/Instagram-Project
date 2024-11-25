@@ -29,39 +29,38 @@ const SignInPage = () => {
   return (
     <>
     <div className="container">
-    <div className="left">
-      <h1>Instagram</h1>
-      <form
-        onSubmit={handleFormSubmit}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          backgroundColor: "#A9A9A9",
-          padding: "1.5rem",
-          borderRadius: "10px",
-        }}
-      >
-        {/* Email */}
-        <label htmlFor="email">Email: </label>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          type="text"
-          id="email"
-          name="email"
-        />
-
-        {/* Password */}
-        <label htmlFor="password">Password: </label>
-        <input ref={pswdRef} type="password" id="password" name="password" />
-        <button type="submit">Submit</button>
-      </form>
-      </div>
       
+      <div className="left">
+          <div className="BackgroundImage"></div>
+        </div>
       <div className="right">
-        <div className="BackgroundImage"></div>
-      </div>
+        <div className="top-right">
+        <h1>Instagram</h1>
+          <form onSubmit={handleFormSubmit}>
+              {/* Email */}
+              <label htmlFor="email"></label>
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email} type="text" id="email" name="email" placeholder="Email or Phone Number"
+              />
+              {/* Password */}
+              <label htmlFor="password"> </label>
+              <input ref={pswdRef} type="password" id="password" name="password" placeholder="Password" />
+              <button type="submit">Log In</button>
+          </form>
+          </div>
+          <div className="bottom-right-container">
+            <div className="bottom-right-1">
+              <p>התחבר/י באמצעות פייסבוק</p>  
+              <p>שכחת את הסיסמא?</p>
+            </div>
+            <div className="bottom-right-2">  
+              <p>אין לך חשבון ? הרשמה</p>
+            </div>
+            
+          </div>
+        </div>
+      
     </div>
     </>
   );
