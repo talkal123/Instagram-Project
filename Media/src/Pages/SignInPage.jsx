@@ -1,67 +1,113 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './SingInPage.css'
+import "./SignInPage.css";
+
 const SignInPage = () => {
   const [email, setEmail] = useState("");
-  const [btnText, setBtnText] = useState("Submit")
+  const [btnText, setBtnText] = useState("Submit");
   const pswdRef = useRef();
   const navigate = useNavigate();
-  
+
+  // handle functions
+  function handleSignUp() {
+    navigate("./sign-up");
+  }
+
+  function handleGooglePlay() {
+    window.location.href =
+      "https://play.google.com/store/apps/details?id=com.instagram.android&hl=en";
+  }
+
+  function handleMicrosoftApps() {
+    window.location.href =
+      "https://apps.microsoft.com/detail/9nblggh5l9xt?hl=en-US&gl=US";
+  }
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    
+
     console.log(email);
     console.log(pswdRef.current.value);
-    setBtnText("Loading...")
+    setBtnText("Loading...");
     setTimeout(() => {
-      alert("Succefuly")
-      setEmail("")
+      alert("Succefuly");
+      setEmail("");
       pswdRef.current.value = "";
-      setBtnText("Submit")
-        setTimeout(() => {
-          navigate("/home")
-        }), 1000
-
-    }), 3000
+      setBtnText("Submit");
+      setTimeout(() => {
+        navigate("/home");
+      }),
+        1000;
+    }),
+      3000;
   };
 
   return (
     <>
-    <div className="container">
-      
-      <div className="left">
-          <div className="BackgroundImage"></div>
+      <div className="container">
+        <div className="left">
+          <div className="backgroundImage"></div>
         </div>
-      <div className="right">
-        <div className="top-right">
-        <h1>Instagram</h1>
-          <form onSubmit={handleFormSubmit}>
-              {/* Email */}
+        <div className="right">
+          <div className="topRight">
+            <div className="hlLogo"></div>
+            <form onSubmit={handleFormSubmit}>
               <label htmlFor="email"></label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
-                value={email} type="text" id="email" name="email" placeholder="Email or Phone Number"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Phone Number, username or email"
               />
               {/* Password */}
               <label htmlFor="password"> </label>
-              <input ref={pswdRef} type="password" id="password" name="password" placeholder="Password" />
+              <input
+                ref={pswdRef}
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+              />
               <button type="submit">Log In</button>
-          </form>
+              <div className="lineCon">
+                <span className="line"></span>
+                <span className="p" id="or">
+                  OR
+                </span>
+                <span className="line"></span>
+              </div>
+            </form>
+            <button className="facebookLog">
+              <div className="facebookIcon"></div>Log in with Facebook
+            </button>
+            <p className="forgotPassword">Forgot password?</p>
           </div>
           <div className="bottom-right-container">
-            <div className="bottom-right-1">
-              <p>התחבר/י באמצעות פייסבוק</p>  
-              <p>שכחת את הסיסמא?</p>
+            <div className="bottom-right">
+              <p className="p">
+                Don't have an account
+                <span className="changePagesButton" onClick={handleSignUp}>
+                  Sign up
+                </span>
+              </p>
             </div>
-            <div className="bottom-right-2">  
-              <p>אין לך חשבון ? הרשמה</p>
-            </div>
-            
+          </div>
+          <p className="p"> Get the app.</p>
+          <div className="appButtonsCon">
+            <button className="googlePlay" onClick={handleGooglePlay}></button>
+            <button
+              className="microsoft"
+              onClick={handleMicrosoftApps}
+            ></button>
           </div>
         </div>
-      
-    </div>
+      </div>
+      {/* <footer>
+        Meta About Blog Jobs Help API Privacy Terms Locations Instagram Lite
+        Threads Contact Uploading & Non-Users Meta Verified Settlement
+        Agreements English English © 2024 Instagram from Meta
+      </footer> */}
     </>
   );
 };
