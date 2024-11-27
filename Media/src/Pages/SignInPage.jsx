@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignInPage.css";
+import "./styles/SignInPage.css";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +11,10 @@ const SignInPage = () => {
   // handle functions
   function handleSignUp() {
     navigate("./sign-up");
+  }
+
+  function handleForgotPass() {
+    navigate("./reset");
   }
 
   function handleGooglePlay() {
@@ -81,7 +85,9 @@ const SignInPage = () => {
             <button className="facebookLog">
               <div className="facebookIcon"></div>Log in with Facebook
             </button>
-            <p className="forgotPassword">Forgot password?</p>
+            <p className="forgotPassword" onClick={handleForgotPass}>
+              Forgot password?
+            </p>
           </div>
           <div className="bottom-right-container">
             <div className="bottom-right">

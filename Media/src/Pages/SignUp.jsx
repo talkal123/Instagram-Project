@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignUp.css";
+import "./styles/SignUp.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -27,8 +27,8 @@ const SignUp = () => {
         <p className="text">
           Sign up to see photos and videos from your friends.
         </p>
-        <button className="facebookLog">
-          <div className="facebookIcon"></div>Log in with Facebook
+        <button className="facebookLog2">
+          <div className="facebookIcon2"></div>Log in with Facebook
         </button>
         <form>
           <label htmlFor="email"></label>

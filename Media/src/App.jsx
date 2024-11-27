@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignInPage from "./Pages/SignInPage";
 import Home from "./Pages/Home";
 import SignUp from "./Pages/SignUp";
+import Reset from "./Pages/Reset";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/sign-in" element={<SignInPage />} />
         {/* נתיב לעמוד ההתחברות */}
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/reset" element={<Reset />} />
       </Routes>
     </BrowserRouter>
   );

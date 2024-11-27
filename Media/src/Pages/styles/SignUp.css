@@ -10,7 +10,7 @@ html {
   height: 75px;
   margin: 40px;
   overflow: visible;
-  background-image: url("../images/instagram-name-logo.png");
+  background-image: url("./images/instagram-name-logo.png");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -91,4 +91,32 @@ html {
   padding-left: 5px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.facebookLog2 {
+  width: 200px;
+  color: white;
+  background-color: rgb(39, 71, 255);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  border: 0px;
+  border-radius: 10px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  border: 0px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.facebookIcon2 {
+  background-image: url("./images/facebook-logo-2-noback.png");
+  background-size: cover;
+  background-position: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
 }
